@@ -36,17 +36,17 @@ function Signup({ onClick }) {
     };
 
     return (
-        <div className='flex w-full'>
-            <div className='w-[33%] h-screen'>
+        <div className='flex w-full h-screen md:fixed relative md:m-0'>
+            <div className='md:w-[33%] w-[100%] object-fill  md:h-screen'>
                 <img src={image1} alt="image" className='w-full h-full' />
             </div>
-            <div className='w-[45%] relative mx-auto'>
-                <span className='absolute top-0 -right-[20%] text-md'>Already a member? <span className='text-blue-600'>Sign In</span></span>
-                <div className='flex flex-col  mx-auto w-[70%]'>
-                    <span className='text-2xl pt-12 font-bold mr-auto'>Sign up to Dribbble</span>
+            <div className='md:w-[45%] w-[80%] absolute md:relative left-[10%] md:left-0 text-white md:text-black md:bg-white bg-black md:opacity-100 opacity-[80%] md:p-0 p-6 top-[15%] md:top-6 md:mx-auto'>
+                <span className='md:absolute md:top-0 md:-right-[20%] text-md'>Already a member? <span className='text-blue-600'>Sign In</span></span>
+                <div className='flex flex-col  ml-0  md:mx-auto w-full md:w-[70%]'>
+                    <span className='text-2xl pt-12 font-bold mr-auto '>Sign up to Dribbble</span>
                     {showMessage && <span className='text-red-500 text-md font-bold mt-4'><li>Username has already been taken</li></span>}
-                    <div className='flex mt-10 text-md  w-full justify-between '>
-                        <span className='flex flex-col w-[45%]'>
+                    <div className='flex mt-10 text-md md:flex-row flex-col md:gap-0 gap-7 w-full justify-between '>
+                        <span className='flex flex-col md:w-[45%] w-full'>
                             <span className='mr-auto font-bold'>Name</span>
                             <input
                                 type='text'
@@ -55,7 +55,7 @@ function Signup({ onClick }) {
                                 onChange={handleNameChange}
                             />
                         </span>
-                        <span className='flex flex-col w-[45%]'>
+                        <span className='flex flex-col md:w-[45%] w-full'>
                             <span className='mr-auto font-bold flex gap-2'>{showMessage && <IoWarning className='text-xl text-red-500' />}Username</span>
                             <input
                                 type='text'
@@ -83,9 +83,9 @@ function Signup({ onClick }) {
                         <span className='text-sm ml-2 text-gray-500'>Creating an account means you're okay with our <span className='text-blue-600'>Terms of Service, Privacy Policy</span> and our default <span className='text-blue-600'>Notification Settings</span>.</span>
                     </div>
                    {!showMessage && name && username && email && pass && agreed ? (
-                        <button className='bg-pink-500 text-white pt-2 pb-2 mt-7 w-[40%] rounded-lg font-bold' onClick={onClick}>Create Account</button>
+                        <button className='bg-pink-500 text-white pt-2 pb-2 mt-7 md:w-[40%] w-full  rounded-lg font-bold' onClick={onClick}>Create Account</button>
                    ):(
-                        <button className='bg-pink-300 text-white pt-2 pb-2 mt-7 w-[40%] rounded-lg font-bold' disabled>Create Account</button>
+                        <button className='bg-pink-300 text-white pt-2 pb-2 mt-7 md:w-[40%] w-full rounded-lg font-bold' disabled>Create Account</button>
                    )}
                     <span className='text-xs text-gray-500 w-[80%] mt-5'>This site is protected by reCAPTCHA and the Google <span className='text-blue-600'>Privacy Policy</span> and <span className='text-blue-600'>Terms of Service</span> apply.</span>
                 </div>
